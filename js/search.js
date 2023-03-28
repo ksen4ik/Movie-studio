@@ -1,13 +1,13 @@
-var input,search,pr,result,result_arr, locale_HTML, result_store;
+var input, search, pr, result, result_arr, locale_HTML, result_store;
 
 function func() {
- 	locale_HTML = document.body.innerHTML;   // сохраняем в переменную весь body (Первоначальный)
+ 	locale_HTML = document.body.innerHTML;
 }
-setTimeout(func, 1000);  //ждем подгрузки Jsona и выполняем
+setTimeout(func, 1000);
 
 function FindOnPage(name, status) {
 
-	input = document.getElementById(name).value; //получаем значение из поля в html
+	input = document.getElementById(name).value;
 	
 	if(input.length<3&&status==true)
 	{
@@ -19,10 +19,10 @@ function FindOnPage(name, status) {
 	{
 		function FindOnPageGo() {
 
-			search = '/'+input+'/g';  //делаем из строки регуярное выражение
-			pr = document.body.innerHTML;   // сохраняем в переменную весь body
-			result = pr.match(/>(.*?)</g);  //отсекаем все теги и получаем только текст
-			result_arr = [];   //в этом массиве будем хранить результат работы (подсветку)
+			search = '/'+input+'/g';
+			pr = document.body.innerHTML;
+			result = pr.match(/>(.*?)</g);
+			result_arr = [];
 
 			var warning = true;
 			for(var i=0;i<result.length;i++) {
@@ -35,15 +35,15 @@ function FindOnPage(name, status) {
 			}
 
 			for(var i=0; i<result.length;i++) {
-				result_arr[i] = result[i].replace(eval(search), '<span style="background-color:yellow;">'+input+'</span>'); //находим нужные элементы, задаем стиль и сохраняем в новый массив
+				result_arr[i] = result[i].replace(eval(search), '<span style="background-color:yellow;">'+input+'</span>');
 			}
 			for(var i=0; i<result.length;i++) {
-				pr=pr.replace(result[i],result_arr[i])  //заменяем в переменной с html текст на новый из новогом ассива
+				pr=pr.replace(result[i],result_arr[i])
 			}
-			document.body.innerHTML = pr;  //заменяем html код
+			document.body.innerHTML = pr;
 		}
 	}
 	function FindOnPageBack() { document.body.innerHTML = locale_HTML; }
-	if(status) { FindOnPageBack(); FindOnPageGo(); } //чистим прошлое и Выделяем найденное
-	if(!status) { FindOnPageBack(); } //Снимаем выделение
+	if(status) { FindOnPageBack(); FindOnPageGo(); }
+	if(!status) { FindOnPageBack(); }
 }
