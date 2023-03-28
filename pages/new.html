@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Studio</title>
+
+    <link rel="shortcut icon" href="../icons/favicon-32x32-red.png">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="prev-block">
+        <div class="prev-content">
+            <div class="theme">
+                <input type="checkbox" id="themeSwitch" name="theme-switch"
+                class="theme-switch__input" onchange="changeTheme(this.checked)"/>
+                <label for="themeSwitch" class="theme-switch__label">
+                    <span></span>
+                </label>
+            </div>
+            <div class="prev-logo">
+                <img src="../images/logo-mini.png" alt="Mini logo">
+            </div>
+            <div class="sign-in">
+                <span><a href="/#">Войти</a></span>
+                <span><a href="/#">Регистрация</a></span>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-block">
+            <div class="navbar">
+                <ul class="nav__ul-list">
+                    <li class="list-element"><a href="../index.html">Главная</a></li>
+                    <li class="list-element"><a href="popular.html">Популярное</a></li>
+                    <li class="list-element"><a href="new.html">Новинки</a></li>
+                    <li class="list-element"><a href="films.html">Фильмы</a></li>
+                    <li class="list-element"><a href="serials.html">Сериалы</a></li>
+                </ul>
+            </div>
+            <div class="nav__search">
+                <input type="search" name="search" id="search" placeholder="Поиск">
+                <button class="btn btn-search" type="submit">
+                    <img src="../icons/search-icon-light.png" alt="Search icon">
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="main-title">
+                <h2>Новинки</h2>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-block">
+            <div class="categories-block">
+                <div class="categories-block-list">
+                    <ul class="categories-list">
+                        <li class="category-element"><a href="popular.html">Популярное</a></li>
+                        <li class="category-element"><a href="new.html">Новинки</a></li>
+                        <li class="category-element"><a href="films.html">Фильмы</a></li>
+                        <li class="category-element"><a href="serials.html">Сериалы</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="end-block">
+                <div class="end-text">
+                    <span>© 2023 Movie Studio</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/scroll.js"></script>
+</body>
+</html>
