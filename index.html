@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Studio</title>
+
+    <link rel="shortcut icon" href="icons/favicon-32x32-red.png">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="prev-block">
+        <div class="prev-content">
+            <div class="theme">
+                <input type="checkbox" id="themeSwitch" name="theme-switch"
+                class="theme-switch__input" onchange="changeTheme(this.checked)"/>
+                <label for="themeSwitch" class="theme-switch__label">
+                    <span></span>
+                </label>
+            </div>
+            <div class="prev-logo">
+                <img src="images/logo-mini.png" alt="Mini logo">
+            </div>
+            <div class="sign-in">
+                <span><a href="/#">Войти</a></span>
+                <span><a href="/#">Регистрация</a></span>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-block">
+            <div class="navbar">
+                <ul class="nav__ul-list">
+                    <li class="list-element"><a href="index.html">Главная</a></li>
+                    <li class="list-element"><a href="pages/popular.html">Популярное</a></li>
+                    <li class="list-element"><a href="pages/new.html">Новинки</a></li>
+                    <li class="list-element"><a href="pages/films.html">Фильмы</a></li>
+                    <li class="list-element"><a href="pages/serials.html">Сериалы</a></li>
+                </ul>
+            </div>
+            <div class="nav__search">
+                <!-- <input type="search" name="search" id="search" placeholder="Поиск">
+                <button class="btn btn-search" type="submit">
+                    <img src="icons/search-icon-light.png" alt="Search icon">
+                </button> -->
+                <form>
+                    <input class="place_for_search" type="text" id="text-to-find" value="" placeholder="Search" autofocus> 
+                    <input class="button_for_turn_back" type="button" onclick="javascript: FindOnPage('text-to-find',false); return false;" value=" " title="Отменить поиск">
+                    <input class="button_for_search" type="submit" onclick="javascript: FindOnPage('text-to-find',true); return false;" value=" " title="Начать поиск">
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="title-block">
+            <img src="images/logo-mini.png" alt="Movie Studio logotype">
+            <h1>Подборка <span>лучших</span> фильмов и сериалов</h1>
+            <h2>Смотрите бесплатно и в хорошем качестве на <span>Movie Studio</span>!</h2>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="main-title">
+                <h2>Рекомендуемое для Вас</h2>
+            </div>
+            <div class="movie-cards" id="recCards">
+                <button class="left" onclick="leftScroll()"><span><</span></button>
+                <div class="cards-block-scroll">
+                    <div class="cards-block">
+                        <div class="card-block">
+                            <a href="https://hdrezka.co/films/fiction/54166-m3gan-2022.html" target="_blank">
+                                <div class="card">
+                                    <div class="card__image">
+                                        <img src="images/m3gan.jpg" alt="Megan image">
+                                    </div>
+                                    <div class="card-text">
+                                        <div class="card__title">
+                                            <h3>М3ГАН</h3>
+                                        </div>
+                                        <div class="card__year">
+                                            <h5>2023</h5>
+                                        </div>
+                                        <div class="card__genre">
+                                            <h5>Фантастика, ужасы</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-block">
+                            <a href="https://hdrezka.co/films/fiction/30219-kapitan-marvel-2019.html" target="_blank">
+                                <div class="card">
+                                    <div class="card__image">
+                                        <img src="images/captain-marvel.jpg" alt="Captain Marvel image">
+                                    </div>
+                                    <div class="card-text">
+                                        <div class="card__title">
+                                            <h3>Капитан Марвел</h3>
+                                        </div>
+                                        <div class="card__year">
+                                            <h5>2019</h5>
+                                        </div>
+                                        <div class="card__genre">
+                                            <h5>Фантастика, боевик, приключения</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-block">
+                            <a href="https://hdrezka.co/films/fiction/2259-interstellar-2014.html" target="_blank">
+                                <div class="card">
+                                    <div class="card__image">
+                                        <img src="images/interstellar.png" alt="interstellar image">
+                                    </div>
+                                    <div class="card-text">
+                                        <div class="card__title">
+                                            <h3>Интерстеллар</h3>
+                                        </div>
+                                        <div class="card__year">
+                                            <h5>2014</h5>
+                                        </div>
+                                        <div class="card__genre">
+                                            <h5>Фантастика, драма, приключения</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-block">
+                            <a href="https://hdrezka.co/films/drama/24567-polnochnoe-solnce-2017.html" target="_blank">
+                                <div class="card">
+                                    <div class="card__image">
+                                        <img src="images/midnight_sun.png" alt="Midnight sun image">
+                                    </div>
+                                    <div class="card-text">
+                                        <div class="card__title">
+                                            <h3>Полночное солнце</h3>
+                                        </div>
+                                        <div class="card__year">
+                                            <h5>2018</h5>
+                                        </div>
+                                        <div class="card__genre">
+                                            <h5>Драма, мелодрама</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-block">
+                            <a href="https://hdrezka.co/series/comedy/45097-svaty-7-2021.html" target="_blank">
+                                <div class="card">
+                                    <div class="card__image">
+                                        <img src="images/svati_7.png" alt="Svati 7 image">
+                                    </div>
+                                    <div class="card-text">
+                                        <div class="card__title">
+                                            <h3>Cваты 7</h3>
+                                        </div>
+                                        <div class="card__year">
+                                            <h5>2021</h5>
+                                        </div>
+                                        <div class="card__genre">
+                                            <h5>Комедия</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-block">
+                            <a href="https://hdrezka.co/series/thriller/2191-chernobyl-zona-otchuzhdeniya-2014.html" target="_blank">
+                                <div class="card">
+                                    <div class="card__image">
+                                        <img src="images/chernobil_1.jpg" alt="Chernobil-1 image">
+                                    </div>
+                                    <div class="card-text">
+                                        <div class="card__title">
+                                            <h3>Чернобыль: Зона отчуждения (1 сезон)</h3>
+                                        </div>
+                                        <div class="card__year">
+                                            <h5>2014</h5>
+                                        </div>
+                                        <div class="card__genre">
+                                            <h5>Триллер, фантастика</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-block">
+                            <a href="https://hdrezka.co/series/comedy/45096-svaty-6-2013.html" target="_blank">
+                                <div class="card">
+                                    <div class="card__image">
+                                        <img src="images/svati_6.jpg" alt="Svati 6 image">
+                                    </div>
+                                    <div class="card-text">
+                                        <div class="card__title">
+                                            <h3>Сваты 6</h3>
+                                        </div>
+                                        <div class="card__year">
+                                            <h5>2013</h5>
+                                        </div>
+                                        <div class="card__genre">
+                                            <h5>Комедия</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="right" onclick="rightScroll()"><span>></span></button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-block">
+            <div class="categories-block">
+                <div class="categories-block-list">
+                    <ul class="categories-list">
+                        <li class="category-element"><a href="pages/popular.html">Популярное</a></li>
+                        <li class="category-element"><a href="pages/new.html">Новинки</a></li>
+                        <li class="category-element"><a href="pages/films.html">Фильмы</a></li>
+                        <li class="category-element"><a href="pages/serials.html">Сериалы</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="end-block">
+                <div class="end-text">
+                    <span>© 2023 Movie Studio</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
